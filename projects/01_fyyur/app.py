@@ -134,11 +134,11 @@ def venues():
     # 2.append the object created to the venues list
   
     for venue in yo:
-      cunt={
+      bunt={
         "id": venue.id,
       "name": venue.name
       }
-      venues.append(cunt)
+      venues.append(bunt)
 
 
     subdata= {
