@@ -51,7 +51,6 @@ class Venue(db.Model):
     seeking_talent= db.Column(db.Boolean) 
     seeking_description= db.Column(db.String())
 
-    # TODO: implement any missing fields, as a database migration using Flask-Migrate
 
 class Artist(db.Model):
     __tablename__ = 'Artist'
@@ -69,7 +68,6 @@ class Artist(db.Model):
     website= db.Column(db.String(500))
     shows = db.relationship('Show', backref='Artist')
 
-    # TODO: implement any missing fields, as a database migration using Flask-Migrate
 
 class Show(db.Model):
   __tablename__ = "Show"
@@ -540,22 +538,6 @@ def show_artist(artist_id):
   data = list(filter(lambda d: d['id'] == artist_id, data_set))[0]
   return render_template('pages/show_artist.html', artist=data)
 
-
-# @app.route('/venues/<venue_id>', methods=['DELETE'])
-# def delete_venue(venue_id):
-  
-#   try:
-#       venue = Venue.query.get(artist_id)
-#       db.session.delete(venue)
-#       db.session.commit()
-#       flash("Venue " + venue.name+ " was deleted successfully!")
-#   except:
-#       db.session.rollback()
-#       flash("Venue was not deleted successfully.")
-#   finally:
-#       db.session.close()
-
-#   return redirect(url_for("index"))
 
 
 
